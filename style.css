@@ -1,0 +1,118 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    font-family: sans-serif;
+}
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+.col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 25%;
+}
+.header {
+    font-size: 3.5em;
+    font-weight: 100;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.253);
+}
+.subtext {
+    color: rgb(63, 63, 63);
+    margin-top: 1vh;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.137);
+}
+.reg {
+    transition: box-shadow .5s;
+    border: none;
+    padding: 9px 17px 9px 17px;
+    color: white;
+    background-color:rgb(36, 36, 36);
+    margin-top: 3vh;
+    border-radius: 5px;
+    font-size: .9em;
+}
+.donut {
+    width: 35%;
+}
+.reg:hover {
+    box-shadow: 0 0 21px rgba(0, 0, 0, 0.274);  
+}
+.subtext,.header {
+    opacity: 0;
+    animation-name: fade1;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+}
+.reg {
+    opacity: 0;
+    animation-name: fade2;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+}
+.donut {
+    opacity: 0;
+    animation-name: fade3;
+    animation-fill-mode: forwards;
+    animation-duration: 3.5s;
+}
+@keyframes fade1 {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes fade2 {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes fade3 {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/*responsive*/
+
+@media screen and (max-width: 480px){
+    .header {
+        font-size: 2rem;
+        width: 90vw;
+    }
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        padding: 40% 5vw 0 5vw;
+        justify-content: center;
+    }
+    .donut {
+        width: 90%;
+        margin-top: 10vh;
+    }
+    .reg {
+        border: none;
+        padding: 6px 14px 6px 14px;
+        font-size: .8em;
+    }
+}
